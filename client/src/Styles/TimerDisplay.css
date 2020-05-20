@@ -1,0 +1,13 @@
+.timerDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 205px;
+  height: 75px;
+  margin: 2.5px;
+  background-color: white;
+  border-radius: 5px;
+  font-family: Helvetica, sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+}

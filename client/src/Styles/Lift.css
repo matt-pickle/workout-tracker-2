@@ -1,0 +1,13 @@
+.liftBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgb(130, 130, 130);
+  border-radius: 5px;
+  margin: 0 5px 5px 5px;
+  padding: 2.5px;
+}
+
+#addSetButton {
+  margin: 2.5px;
+}
