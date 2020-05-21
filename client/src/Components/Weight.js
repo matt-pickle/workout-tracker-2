@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import WeightInput from "./WeightInput";
 import WeightChart from "./WeightChart";
-import "../Styles/Weight.css";
+import "../Styles/Weight.scss";
 
 function Weight() {
   const [weightHistory, setWeightHistory] = useState(

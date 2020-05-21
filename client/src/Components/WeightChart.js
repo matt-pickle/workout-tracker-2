@@ -1,6 +1,6 @@
 import React from "react";
 import {Line} from "react-chartjs-2";
-import "../Styles/WeightChart.css";
+import "../Styles/WeightChart.scss";
 
 function WeightChart(props) {
   const datesArr = Object.keys(props.weightHistory) || [];

@@ -1,6 +1,6 @@
 import React from "react";
 import NavButton from "./NavButton";
-import "../Styles/Header.css";
+import "../Styles/Header.scss";
 
 function Header() {
   return (

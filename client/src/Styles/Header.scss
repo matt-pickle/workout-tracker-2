@@ -1,0 +1,6 @@
+@import "_variables";
+
+.header {
+  @include flexbox(row);
+  margin: 5px;
+}

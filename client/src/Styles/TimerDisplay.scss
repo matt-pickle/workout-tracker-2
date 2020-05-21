@@ -1,7 +1,7 @@
+@import "_variables";
+
 .timerDisplay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexbox(row);
   width: 205px;
   height: 75px;
   margin: 2.5px;

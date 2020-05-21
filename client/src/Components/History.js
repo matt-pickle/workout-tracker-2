@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "../Styles/History.css";
+import "../Styles/History.scss";
 import PastWorkout from "./PastWorkout";
 
 function History() {

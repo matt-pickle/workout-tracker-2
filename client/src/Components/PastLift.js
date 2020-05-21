@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/PastLift.css";
+import "../Styles/PastLift.scss";
 
 function PastLift(props) {
   return (

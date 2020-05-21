@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/PastWorkout.css";
+import "../Styles/PastWorkout.scss";
 import PastLift from "./PastLift";
 import Button from "./Button";
 

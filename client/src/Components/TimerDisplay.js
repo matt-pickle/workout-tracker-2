@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import "../Styles/TimerDisplay.css";
+import "../Styles/TimerDisplay.scss";
 
 function TimerDisplay(props) {
   const [minutesRemaining, setMinutesRemaining] = useState(props.minutes);

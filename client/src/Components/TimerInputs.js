@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/TimerInputs.css";
+import "../Styles/TimerInputs.scss";
 
 function TimerInputs(props) {
   

@@ -1,8 +1,7 @@
+@import "_variables";
+
 .pastWorkout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include flexbox(column);
   background-color: black;
   color: white;
   border-radius: 5px;

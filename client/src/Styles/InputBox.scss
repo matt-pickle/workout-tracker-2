@@ -1,13 +1,12 @@
+@import "_variables";
+
 .inputBox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexbox(row);
   margin: 2.5px;
 }
 
 label {
-  display: flex;
-  align-items: center;
+  @include flexbox(row);
   color: white;
   font-family: Helvetica, sans-serif;
   font-weight: 400;
@@ -24,9 +23,7 @@ input {
 }
 
 .inputContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexbox(row);
   width: 28px;
   height: 30px;
   background-color: white;

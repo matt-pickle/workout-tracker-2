@@ -1,0 +1,6 @@
+@import "_variables";
+
+.weightContainer {
+  @include flexbox(column);
+  width: 100%;
+}

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import TimerInputs from "./TimerInputs";
 import TimerDisplay from "./TimerDisplay";
 import Button from "./Button";
-import "../Styles/Timer.css";
+import "../Styles/Timer.scss";
 
 function Timer() {
   const [timerIsRunning, setTimerIsRunning] = useState(false);

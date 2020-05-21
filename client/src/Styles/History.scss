@@ -1,9 +1,8 @@
+@import "_variables";
+
 .history {
-  display: flex;
-  flex-direction: column;
+  @include flexbox(column);
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;  
   font-family: Helvetica, sans-serif;
   font-weight: 400;
   margin: 0;

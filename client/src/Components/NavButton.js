@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import "../Styles/NavButton.css";
+import "../Styles/NavButton.scss";
 
 function NavButton(props) {
   const [hoverClass, setHoverClass] = useState("");

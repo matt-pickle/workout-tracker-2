@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "../Styles/WeightInput.css";
+import "../Styles/WeightInput.scss";
 import Button from "./Button";
 
 function WeightInput(props) {

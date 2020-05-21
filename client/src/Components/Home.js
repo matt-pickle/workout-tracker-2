@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from "react";
 import Lift from "./Lift";
 import Button from "./Button";
 import Timer from "./Timer";
-import "../Styles/Home.css";
+import "../Styles/Home.scss";
 
 function Home() {
   const [lifts, setLifts] = useState([1]);
