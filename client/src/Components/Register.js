@@ -2,10 +2,10 @@ import React, {useState} from "react";
 import Button from "./Button";
 import "../Styles/Register.scss";
 
-function Register() {
+function Register(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState();
 
   function handleNameChange(event) {
     setUsername(event.target.value);
@@ -21,14 +21,14 @@ function Register() {
     })
     .then(res => {
       if (!res.ok) {
+        //Gives error message if registration is not successful
         res.text().then(text => {
           setMessage(text);
           console.error(text);
         })
       } else {
-        res.text().then(text => {
-          setMessage(text);
-        });
+        //Redirects to home page if registration is successful
+        props.history.push("/");
       }
     });
     setUsername("");
@@ -37,6 +37,8 @@ function Register() {
 
   return (
     <div className="register">
+      <p className="regTitle">Register new user</p>
+      {message ? <p>***{message}***</p> : null}
       <div className="inputBox">
         <label htmlFor="regUsernameContainer">Username</label>
         <div className="inputContainer" id="regUsernameContainer">
@@ -50,7 +52,7 @@ function Register() {
       <div className="inputBox">
       <label htmlFor="regPasswordContainer">Password</label>
         <div className="inputContainer" id="regPasswordContainer">
-          <input type="text"
+          <input type="password"
                   id="regPassword"
                   value={password}
                   onChange={handlePasswordChange}
@@ -60,7 +62,6 @@ function Register() {
     <Button text="REGISTER"
               onClick={handleClick}
       />
-    <h1>{message}</h1>
   </div>
   )
 }

@@ -1,5 +1,8 @@
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+
+const SECRET = process.env.SECRET;
 
 //Registers new user
 function registerUser(req, res) {
@@ -27,7 +30,10 @@ function registerUser(req, res) {
                 console.error(err);
                 res.status(500).send("Error registering new user");
               } else {
-                res.status(200).send("Registration successful!");
+                //Issue token
+                const token = jwt.sign({username: req.query.username}, SECRET, {expiresIn: "5 hours"});
+                res.cookie("token", token, {httpOnly: true})
+                .sendStatus(200);
               }
             }
           );
