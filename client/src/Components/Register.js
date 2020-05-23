@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Button from "./Button";
+import "../Styles/Register.scss";
 
 function Register() {
   const [username, setUsername] = useState("");

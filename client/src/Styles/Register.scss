@@ -1,0 +1,12 @@
+@import "_variables";
+
+.register {
+  @include flexbox(column);
+  background: $medium-gray;
+  border-radius: 5px;
+  padding: 2.5px;
+}
+
+#regUsernameContainer, #regPasswordContainer {
+  width: 125px;
+}
