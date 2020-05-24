@@ -70,7 +70,23 @@ function login(req, res) {
   });
 }
 
+//Verifies login and gets current username
+function getUser(req, res) {
+  if (!req.cookies.token) {
+    res.status(401).send("Unauthorized: No token provided");
+  } else {
+    jwt.verify(req.cookies.token, SECRET, (err, decoded) => {
+      if (err) {
+        res.status(401).send("Unauthorized: Invalid token");
+      } else {
+        res.status(200).send(decoded.username);
+      }
+    });
+  }
+}
+
 module.exports = {
   registerUser,
-  login
+  login,
+  getUser
 }
