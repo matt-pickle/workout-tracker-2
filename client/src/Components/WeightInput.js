@@ -25,7 +25,7 @@ function WeightInput(props) {
 
   return (
     <div className="inputBox">
-      <label for="weight">Current Weight</label>
+      <label htmlFor="weight">Current Weight</label>
       <div className="inputContainer" id="currentWeightContainer">
         <input type="text"
                id="weight"
