@@ -3,6 +3,7 @@ import './Styles/App.scss';
 import {Switch, Route} from "react-router-dom";
 import Header from "./Components/Header";
 import Register from "./Components/Register";
+import Login from "./Components/Login";
 import Home from "./Components/Home";
 import History from "./Components/History";
 import Weight from "./Components/Weight";
@@ -14,6 +15,7 @@ function App() {
       <Switch>
         <Route exact path="/"><Home /></Route>
         <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
         <Route path="/history"><History /></Route>
         <Route path="/weight"><Weight /></Route>
       </Switch>

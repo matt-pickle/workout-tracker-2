@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
 import Button from "./Button";
+import {Link} from "react-router-dom";
 import "../Styles/Register.scss";
 
 function Register(props) {
@@ -17,18 +17,18 @@ function Register(props) {
   }
 
   function handleClick() {
-    fetch(`/user/register?username=${username}&password=${password}`, {
+    fetch(`/user/login?username=${username}&password=${password}`, {
       method: "POST"
     })
     .then(res => {
       if (!res.ok) {
-        //Gives error message if registration is not successful
+        //Gives error message if login is not successful
         res.text().then(text => {
           setMessage(text);
           console.error(text);
         })
       } else {
-        //Redirects to home page if registration is successful
+        //Redirects to home page if login is successful
         props.history.push("/");
       }
     });
@@ -38,7 +38,6 @@ function Register(props) {
 
   return (
     <div className="register">
-      <p className="regTitle">Register new user</p>
       {message ? <p>***{message}***</p> : null}
       <div className="inputBox">
         <label htmlFor="regUsernameContainer">Username</label>
@@ -60,12 +59,12 @@ function Register(props) {
           />
         </div>
     </div>
-    <Button text="REGISTER"
-              onClick={handleClick}
+    <Button text="LOGIN"
+            onClick={handleClick}
       />
-    <p>Already have an account?</p>
-    <Link to="/login">
-      <Button text="GO TO LOGIN PAGE" />
+    <p>Don't have an account?</p>
+    <Link to="/register">
+      <Button text="REGISTER NEW USER" />
     </Link>
   </div>
   )

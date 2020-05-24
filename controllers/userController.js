@@ -43,4 +43,34 @@ function registerUser(req, res) {
   });
 }
 
-module.exports = registerUser;
+//Login
+function login(req, res) {
+  User.findOne({username: req.query.username}, (err, user) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send("Internal error. Please try again.");
+    } else if (!user) { //Check username
+      res.status(401).send("Incorrect username.");
+    } else {
+      //Check password
+      bcrypt.compare(req.query.password, user.password, (err, result) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send("Internal error. Please try again.");
+        } else if (!result) {
+          res.status(401).send("Incorrect password.");
+        } else {
+          //Issue token
+          const token = jwt.sign({username: req.query.username}, SECRET, {expiresIn: "5 hours"});
+          res.cookie("token", token, {httpOnly: true})
+            .sendStatus(200);
+        }
+      });
+    }
+  });
+}
+
+module.exports = {
+  registerUser,
+  login
+}
