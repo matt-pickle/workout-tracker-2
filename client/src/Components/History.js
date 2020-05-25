@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import "../Styles/History.scss";
 import PastWorkout from "./PastWorkout";
+import LogoutButton from "./LogoutButton";
 
-function History() {
+function History(props) {
   const [workoutHistory, setWorkoutHistory] = useState(JSON.parse(localStorage.getItem("workoutHistory")));
 
   //Removes PastWorkout when "Remove" button is clicked
@@ -28,13 +29,13 @@ function History() {
       )
     })
   : <h1>No workout history yet!</h1>;
-  
+
   return (
     <div className="history">
       {pastWorkouts}
+      <LogoutButton />
     </div>
   )
 }
-
 
 export default History;

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import WeightInput from "./WeightInput";
 import WeightChart from "./WeightChart";
+import LogoutButton from "./LogoutButton";
 import "../Styles/Weight.scss";
 
 function Weight() {
@@ -12,6 +13,7 @@ function Weight() {
     <div className="weightContainer">
       <WeightInput setWeightHistory={setWeightHistory} />
       <WeightChart weightHistory={weightHistory}      />
+      <LogoutButton />
     </div>
   )
 }

@@ -85,8 +85,14 @@ function getUser(req, res) {
   }
 }
 
+//Logout
+function logout(req, res) {
+  res.cookie("token").sendStatus(200);
+}
+
 module.exports = {
   registerUser,
   login,
-  getUser
+  getUser,
+  logout
 }

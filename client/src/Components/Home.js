@@ -2,9 +2,10 @@ import React, {useState, useEffect, useRef} from "react";
 import Lift from "./Lift";
 import Button from "./Button";
 import Timer from "./Timer";
+import LogoutButton from "./LogoutButton";
 import "../Styles/Home.scss";
 
-function Home() {
+function Home(props) {
   const [lifts, setLifts] = useState([1]);
   const [workoutArr, setWorkoutArr] = useState([]);
   const liftNameInputRef = useRef(null);
@@ -70,6 +71,7 @@ function Home() {
               onClick={saveWorkout}
       />
       <Timer />
+      <LogoutButton />
     </div>
   )
 }
