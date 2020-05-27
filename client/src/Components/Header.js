@@ -6,13 +6,13 @@ function Header() {
   return (
     <div className="header">
       <NavButton text="HISTORY"
-              link="/history"
+              link="/user/history"
       />
       <NavButton text="CURRENT"
-              link="/"
+              link="/user/current"
       />
       <NavButton text="WEIGHT"
-              link="/weight"
+              link="/user/weight"
       />
     </div>
     

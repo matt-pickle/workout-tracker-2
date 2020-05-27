@@ -1,24 +1,21 @@
 import React from 'react';
 import './Styles/App.scss';
-import {Switch, Route} from "react-router-dom";
-import Header from "./Components/Header";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {UserContextProvider} from "./Components/UserContext";
+import User from "./Components/User";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
-import Home from "./Components/Home";
-import History from "./Components/History";
-import Weight from "./Components/Weight";
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <Switch>
-        <ProtectedRoute exact path="/" component={Home} />
+        <ProtectedRoute path="/user">
+          <User />
+        </ProtectedRoute>
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
-        <ProtectedRoute path="/history" component={History}/>
-        <ProtectedRoute path="/weight" component={Weight}/>
       </Switch>
     </div>
     

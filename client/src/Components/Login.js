@@ -29,7 +29,7 @@ function Register(props) {
         })
       } else {
         //Redirects to home page if login is successful
-        props.history.push("/");
+        props.history.push("/user/current");
       }
     });
     setUsername("");

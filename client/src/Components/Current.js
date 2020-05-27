@@ -1,14 +1,16 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useState, useEffect, useRef, useContext} from "react";
+import {UserContext} from "./UserContext";
 import Lift from "./Lift";
 import Button from "./Button";
 import Timer from "./Timer";
 import LogoutButton from "./LogoutButton";
-import "../Styles/Home.scss";
+import "../Styles/Current.scss";
 
-function Home(props) {
+function Current(props) {
   const [lifts, setLifts] = useState([1]);
   const [workoutArr, setWorkoutArr] = useState([]);
   const liftNameInputRef = useRef(null);
+  const user = useContext(UserContext);
 
   function addLift() {
     const newLiftNum = lifts.length + 1;
@@ -76,4 +78,4 @@ function Home(props) {
   )
 }
 
-export default Home;
+export default Current;
