@@ -1,9 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import "../Styles/WeightInput.scss";
+import {UserContext} from "./UserContext";
 import Button from "./Button";
 
 function WeightInput(props) {
   const [input, setInput] = useState("");
+  const user = useContext(UserContext);
 
   const today = new Date();
   const month = today.getMonth() + 1;

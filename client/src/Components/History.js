@@ -1,10 +1,12 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import "../Styles/History.scss";
+import {UserContext} from "./UserContext";
 import PastWorkout from "./PastWorkout";
 import LogoutButton from "./LogoutButton";
 
 function History(props) {
   const [workoutHistory, setWorkoutHistory] = useState(JSON.parse(localStorage.getItem("workoutHistory")));
+  const user = useContext(UserContext);
 
   //Removes PastWorkout when "Remove" button is clicked
   function removeWorkout(id) {
