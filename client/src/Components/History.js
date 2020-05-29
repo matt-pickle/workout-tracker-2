@@ -1,12 +1,28 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import "../Styles/History.scss";
 import {UserContext} from "./UserContext";
 import PastWorkout from "./PastWorkout";
 import LogoutButton from "./LogoutButton";
 
 function History(props) {
-  const [workoutHistory, setWorkoutHistory] = useState(JSON.parse(localStorage.getItem("workoutHistory")));
   const user = useContext(UserContext);
+  const [workoutHistory, setWorkoutHistory] = useState();
+
+  //Gets workout history from database
+  useEffect(() => {
+    fetch(`/workout/getHistory?user=${user}`)
+    .then(res => {
+      if (!res.ok) {
+        res.text().then(text => {
+          console.error(text);
+        });
+      } else {
+        res.text().then(text => {
+          setWorkoutHistory(JSON.parse(text));
+        });
+      }
+    });
+  }, []);
 
   //Removes PastWorkout when "Remove" button is clicked
   function removeWorkout(id) {
@@ -20,17 +36,18 @@ function History(props) {
 
   const pastWorkouts = workoutHistory ? 
     workoutHistory.map(workout => {
-      const workoutDate = Object.keys(workout)
+      const workoutObj = JSON.parse(workout);
+      const workoutDate = Object.keys(workoutObj)
       return (
         <PastWorkout date={workoutDate}
-                     workoutArr={workout[workoutDate]}
+                     workoutArr={workoutObj[workoutDate]}
                      removeWorkout={removeWorkout}
                      id={workoutHistory.indexOf(workout) + 1}
                      key={workoutHistory.indexOf(workout) + 1}
         />
       )
     })
-  : <h1>No workout history yet!</h1>;
+  : <h2>No workout history yet!</h2>;
 
   return (
     <div className="history">

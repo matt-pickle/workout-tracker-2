@@ -14,4 +14,18 @@ function addWorkout(req, res) {
     });
 }
 
-module.exports = {addWorkout};
+//Gets a user's workoutHistory
+function getHistory(req, res) {
+  User.findOne(
+    {username: req.query.user},
+    (err, userObj) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send(err);
+      }
+      return res.status(200).send(userObj.workoutHistory);
+    }
+  )
+}
+
+module.exports = {addWorkout, getHistory};

@@ -18,7 +18,7 @@ function PastWorkout(props) {
                 key={lift["id"]}
       />
     )                     
-  })
+  });
   
   return (
     <div className="pastWorkout">
