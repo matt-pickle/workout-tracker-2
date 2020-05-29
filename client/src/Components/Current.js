@@ -9,6 +9,7 @@ import "../Styles/Current.scss";
 function Current(props) {
   const [lifts, setLifts] = useState([1]);
   const [workoutArr, setWorkoutArr] = useState([]);
+  const [message, setMessage] = useState("");
   const liftNameInputRef = useRef(null);
   const user = useContext(UserContext);
 
@@ -32,19 +33,28 @@ function Current(props) {
     }
   }
   
-  //Saves workout to localStorage
+  //Saves workout to database
   function saveWorkout() {
     const today = new Date();
     const month = today.getMonth() + 1;
     const date = today.getDate();
     const year = today.getFullYear();
     const dateString = `${month}-${date}-${year}`;
-
-    const workoutObj = {[dateString]: workoutArr};
-    const workoutHistory = JSON.parse(localStorage.getItem("workoutHistory")) || [];
-    const newWorkoutHistory = [...workoutHistory, workoutObj];
+    const workoutObj = JSON.stringify({[dateString]: workoutArr});
     
-    localStorage.setItem("workoutHistory", JSON.stringify(newWorkoutHistory));
+    fetch(`/workout/addWorkout?user=${user}&workoutObj=${workoutObj}`, {
+      method: "POST"
+    })
+    .then(res => {
+      if (!res.ok) {
+        res.text().then(text => {
+          setMessage("Error: Workout was not saved successfully.");
+          console.error(text);
+        });
+      } else {
+          setMessage("Workout saved to your history!");
+      }
+    });
   }
 
   //Focuses the Lift input when a new lift is added
@@ -72,6 +82,7 @@ function Current(props) {
               id="saveButton" 
               onClick={saveWorkout}
       />
+      <p>{message}</p>
       <Timer />
       <LogoutButton />
     </div>

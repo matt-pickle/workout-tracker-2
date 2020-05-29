@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const userRouter = require("./routes/userRouter");
+const workoutRouter = require("./routes/workoutRouter");
 
 const app = express();
 const PORT = process.env.PORT;
@@ -9,6 +10,7 @@ const DATABASE_URL = process.env.DATABASE_URL;
 
 app.use(express.static(path.join(__dirname, "client/build")));
 app.use("/user", userRouter);
+app.use("/workout", workoutRouter);
 
 mongoose.connect(
 DATABASE_URL,
