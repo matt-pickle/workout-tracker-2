@@ -31,12 +31,21 @@ function History(props) {
       return (workoutHistoryCopy.indexOf(workout) + 1) !== id
     })
     setWorkoutHistory(newWorkoutHistory)
-    localStorage.setItem("workoutHistory", JSON.stringify(newWorkoutHistory));
+    fetch(`/workout/updateHistory?user=${user}&workoutHistory=${JSON.stringify(newWorkoutHistory)}`, {
+      method: "PUT"
+    })
+    .then(res => {
+      if (!res.ok) {
+        res.text().then(text => {
+          console.error(text);
+        });
+      }
+    });
   }
 
   const pastWorkouts = workoutHistory ? 
     workoutHistory.map(workout => {
-      const workoutObj = JSON.parse(workout);
+      const workoutObj = workout;
       const workoutDate = Object.keys(workoutObj)
       return (
         <PastWorkout date={workoutDate}

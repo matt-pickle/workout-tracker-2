@@ -1,5 +1,5 @@
 const express = require("express");
-const {addWorkout, getHistory} = require("../controllers/workoutController");
+const {addWorkout, getHistory, updateHistory} = require("../controllers/workoutController");
 
 const router = express.Router();
 
@@ -8,5 +8,8 @@ router.post("/addWorkout", addWorkout);
 
 //Gets a user's workoutHistory
 router.get("/getHistory", getHistory);
+
+//Removes a workout from user's workoutHistory
+router.put("/updateHistory", updateHistory);
 
 module.exports = router;

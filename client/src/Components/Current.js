@@ -40,9 +40,9 @@ function Current(props) {
     const date = today.getDate();
     const year = today.getFullYear();
     const dateString = `${month}-${date}-${year}`;
-    const workoutObj = JSON.stringify({[dateString]: workoutArr});
+    const workoutObj = {[dateString]: workoutArr};
     
-    fetch(`/workout/addWorkout?user=${user}&workoutObj=${workoutObj}`, {
+    fetch(`/workout/addWorkout?user=${user}&workoutObj=${JSON.stringify(workoutObj)}`, {
       method: "POST"
     })
     .then(res => {
