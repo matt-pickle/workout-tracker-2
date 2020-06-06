@@ -1,11 +1,17 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {Line} from "react-chartjs-2";
 import "../Styles/WeightChart.scss";
 
 function WeightChart(props) {
-  const datesArr = Object.keys(props.weightHistory) || [];
-  const weightsArr = Object.values(props.weightHistory) || [];
-  
+  const datesArr = props.weightHistory.map(obj => {
+    const keyArr = Object.keys(obj);
+    return keyArr[0];
+  });
+  const weightsArr = props.weightHistory.map(obj => {
+    const valueArr = Object.values(obj);
+    return valueArr[0];
+  });
+
   //Data and styling for the chart
   const chartData = {
     labels: datesArr,

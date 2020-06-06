@@ -37,7 +37,7 @@ function updateHistory(req, res) {
     (err, obj) => {
       if (err) {
         console.error(err);
-        return res.send(500).send(err);
+        return res.status(500).send(err);
       };
       return res.sendStatus(200);
     }

@@ -7,22 +7,34 @@ function WeightInput(props) {
   const [input, setInput] = useState("");
   const user = useContext(UserContext);
 
-  const today = new Date();
-  const month = today.getMonth() + 1;
-  const date = today.getDate();
-  const year = today.getFullYear();
-  const dateString = `${month}-${date}-${year}`;
-
   function handleChange(event) {
     setInput(event.target.value);
   }
 
-  //Saves current weight to localStorage and state
+  //Saves current weight to database and state
   function addToHistory() {
-    const weightHistory = JSON.parse(localStorage.getItem("weightHistory")) || {};
-    const newWeightHistory = {...weightHistory, [dateString]: input};
-    localStorage.setItem("weightHistory", JSON.stringify(newWeightHistory));
-    props.setWeightHistory(newWeightHistory);
+    const today = new Date();
+    const month = today.getMonth() + 1;
+    const date = today.getDate();
+    const year = today.getFullYear();
+    const dateString = `${month}-${date}-${year}`;
+    const weightObj = {[dateString]: input};
+
+    fetch(`/weight/addWeight?user=${user}&weightObj=${JSON.stringify(weightObj)}`, {
+      method: "POST"
+    })
+    .then(res => {
+      if (!res.ok) {
+        res.text().then(text => {
+          console.error(text);
+        });
+      } else {
+        res.text().then(text => {
+          props.setWeightHistory(JSON.parse(text));
+          setInput("");
+        });
+      }
+    });
   }
 
   return (
