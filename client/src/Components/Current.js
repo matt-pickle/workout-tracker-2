@@ -4,7 +4,7 @@ import Lift from "./Lift";
 import Button from "./Button";
 import Timer from "./Timer";
 import LogoutButton from "./LogoutButton";
-import "../Styles/Current.scss";
+import "../Styles/styles.scss";
 
 function Current(props) {
   const [lifts, setLifts] = useState([1]);

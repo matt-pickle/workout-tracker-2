@@ -1,10 +1,10 @@
 import React from "react";
 import NavButton from "./NavButton";
-import "../Styles/Header.scss";
+import "../Styles/styles.scss";
 
-function Header() {
+function Navigation() {
   return (
-    <div className="header">
+    <div className="nav">
       <NavButton text="HISTORY"
               link="/user/history"
       />
@@ -20,4 +20,4 @@ function Header() {
 }
 
 
-export default Header;
+export default Navigation;

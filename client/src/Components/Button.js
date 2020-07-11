@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "../Styles/Button.scss";
+import "../Styles/styles.scss";
 
 function Button(props) {
   const [hoverClass, setHoverClass] = useState("");

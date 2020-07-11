@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from "react";
 import InputBox from "./InputBox";
 import Button from "./Button";
-import "../Styles/Lift.scss";
+import "../Styles/styles.scss";
 
 function Lift(props, ref) {
   const [sets, setSets] = useState([1]);

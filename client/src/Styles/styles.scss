@@ -1,0 +1,87 @@
+//VARIABLES
+
+$background-gray: rgb(50, 50, 50);
+$dark-gray: rgb(100, 100, 100);
+$medium-gray: rgb(130, 130, 130);
+$light-gray: rgb(200, 200, 200);
+
+//MIXINS
+
+@mixin flexbox($property) {
+  display: flex;
+  flex-direction: $property;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+//GENERAL
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: $background-gray;
+}
+
+.App {
+  @include flexbox(column);
+  padding: 10px;
+}
+
+.user-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button {
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  padding: .5em 1.5em; 
+  font-family: Helvetica, sans-serif;
+  font-weight: 800;
+  color: black;
+  background-color: $light-gray;
+  cursor: pointer;
+}
+
+.hovered {
+  background-color: $dark-gray;
+}
+
+//NAVIGATION
+
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.nav-button {
+  flex: 1;
+  font-size: 16px;
+}
+
+@media (min-width: 600px) {
+  .nav {
+    width: 580px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav {
+    grid-gap: 5px;
+  }
+  
+  .nav-button {
+    font-size: 13px;
+  }
+}

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import Button from "./Button";
-import "../Styles/Register.scss";
+import "../Styles/styles.scss";
 
 function Register(props) {
   const [username, setUsername] = useState("");

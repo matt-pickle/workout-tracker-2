@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import "../Styles/InputBox.scss";
+import "../Styles/styles.scss";
 
 function InputBox(props, ref) {
   const [input, setInput] = useState("");

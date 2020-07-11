@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from "react";
-import "../Styles/History.scss";
+import "../Styles/styles.scss";
 import {UserContext} from "./UserContext";
 import PastWorkout from "./PastWorkout";
 import LogoutButton from "./LogoutButton";

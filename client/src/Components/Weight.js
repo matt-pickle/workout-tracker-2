@@ -3,7 +3,7 @@ import WeightInput from "./WeightInput";
 import WeightChart from "./WeightChart";
 import LogoutButton from "./LogoutButton";
 import {UserContext} from "./UserContext";
-import "../Styles/Weight.scss";
+import "../Styles/styles.scss";
 
 function Weight() {
   const [weightHistory, setWeightHistory] = useState([]);

@@ -1,5 +1,5 @@
 import React, {useState, useContext} from "react";
-import "../Styles/WeightInput.scss";
+import "../Styles/styles.scss";
 import {UserContext} from "./UserContext";
 import Button from "./Button";
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Styles/App.scss';
+import './Styles/styles.scss';
 import {Switch, Route, Redirect} from "react-router-dom";
 import {UserContextProvider} from "./Components/UserContext";
 import User from "./Components/User";

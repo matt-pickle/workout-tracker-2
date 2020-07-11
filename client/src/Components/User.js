@@ -1,14 +1,14 @@
 import React from "react"
 import {Switch, Route} from "react-router-dom";
-import Header from "./Header";
+import Navigation from "./Navigation";
 import Current from "./Current";
 import History from "./History";
 import Weight from "./Weight";
 
 function User() {
   return (
-    <div>
-      <Header />
+    <div className="user-container">
+      <Navigation />
       <Switch>
         <Route path="/user/current"><Current /></Route>
         <Route path="/user/history"><History /></Route>
