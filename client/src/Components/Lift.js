@@ -35,7 +35,7 @@ function Lift(props, ref) {
   })
 
   return (
-    <div className="liftBox">
+    <div className="lift-box">
       <InputBox name="Lift"
                 addToLift={addToLift}
                 ref={ref}
@@ -45,7 +45,7 @@ function Lift(props, ref) {
       />
       {repInputBoxes}
       <Button text="ADD SET"
-              id="addSetButton"
+              id="add-set-button"
               onClick={addSet}
       />
     </div>

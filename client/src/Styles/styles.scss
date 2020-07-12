@@ -24,11 +24,15 @@ $light-gray: rgb(200, 200, 200);
 body {
   margin: 0;
   background: $background-gray;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .App {
   @include flexbox(column);
-  padding: 10px;
+  padding: .5em;
 }
 
 .user-container {
@@ -43,9 +47,10 @@ body {
   text-decoration: none;
   text-align: center;
   border-radius: 5px;
-  padding: .5em 1.5em; 
-  font-family: Helvetica, sans-serif;
-  font-weight: 800;
+  padding: .5em 1.4em; 
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
   color: black;
   background-color: $light-gray;
   cursor: pointer;
@@ -60,28 +65,87 @@ body {
 .nav {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
-  margin-bottom: 10px;
+  grid-gap: .5em;
+  margin-bottom: 1em;
 }
 
 .nav-button {
   flex: 1;
-  font-size: 16px;
 }
 
 @media (min-width: 600px) {
   .nav {
     width: 580px;
-    margin: 0 auto;
+    margin: 0 auto 1em;
   }
 }
 
-@media (max-width: 400px) {
-  .nav {
-    grid-gap: 5px;
-  }
-  
-  .nav-button {
+//CURRENT WORKOUT PAGE
+
+.home {
+  @include flexbox(column);
+}
+
+.lifts-container {
+  @include flexbox(column);
+}
+
+#save-button {
+  width: 200px;
+  height: 50px;
+  margin: 25px;
+}
+
+.lift-box {
+  @include flexbox(row);
+  background-color: $medium-gray;
+  border-radius: 5px;
+  margin: 0 .0 .5em;
+  padding: .25em;
+}
+
+#add-set-button {
+  margin: .25em;
+}
+
+.input-box {
+  @include flexbox(row);
+  margin: 2.5px;
+}
+
+label {
+  @include flexbox(row);
+  color: white;
+  padding: .5em 1em;
+  background-color: black;
+  border-radius: 5px 0 0 5px;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  width: 1.5em;
+  height: 1.1em;
+}
+
+.input-container {
+  @include flexbox(row);
+  background-color: white;
+  border-radius: 0 5px 5px 0;
+  padding: .5em .5em;
+}
+
+#Lift {
+  width: 8em;
+}
+
+#Weight {
+  width: 2em;
+}
+
+@media (max-width: 400px) {  
+  body {
     font-size: 13px;
   }
 }

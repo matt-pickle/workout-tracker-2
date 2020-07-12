@@ -72,14 +72,14 @@ function Current(props) {
 
   return (
     <div className="home">
-      <div className="liftsContainer">
+      <div className="lifts-container">
         {allLifts}
         <Button text="ADD LIFT"
                 onClick={addLift}
         />
       </div>
       <Button text="SAVE WORKOUT"
-              id="saveButton" 
+              id="save-button" 
               onClick={saveWorkout}
       />
       <p>{message}</p>
