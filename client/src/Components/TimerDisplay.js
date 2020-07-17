@@ -41,7 +41,7 @@ function TimerDisplay(props) {
   }
 
     return (
-    <div className="timerDisplay">
+    <div className="timer-display">
       <p>{`${minutesRemaining} : ${secondsRemaining}`}</p>
       {timesUp()}
     </div>

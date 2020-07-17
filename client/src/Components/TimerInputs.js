@@ -39,14 +39,14 @@ function TimerInputs(props) {
   } 
 
   return (
-    <form>
-      <select className="timerInput"
+    <form className="timer-inputs">
+      <select id="minutes-input"
               value={props.minutes}
               onChange={changeMinutes}
       >
        {minutesOptions}
       </select>
-      <select className="timerInput"
+      <select id="seconds-input"
               value={props.seconds}
               onChange={changeSeconds}
       >

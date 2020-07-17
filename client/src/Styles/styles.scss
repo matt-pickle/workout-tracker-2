@@ -88,12 +88,13 @@ body {
 
 .lifts-container {
   @include flexbox(column);
+  margin-bottom: 4em;
 }
 
 #save-button {
-  width: 200px;
-  height: 50px;
-  margin: 25px;
+  width: 15em;
+  height: 4em;
+  margin-bottom: 3em;
 }
 
 .lift-box {
@@ -144,8 +145,57 @@ input {
   width: 2em;
 }
 
+.timer {
+  @include flexbox(column);
+  background-color: $medium-gray;
+  border-radius: 5px;
+  margin-bottom: 2em;
+  padding: .5em;
+}
+
+.timer-inputs {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: .5em;
+}
+
+#minutes-input,
+#seconds-input {
+  width: 1.45em;
+  height: 1.25em;
+  background-color: white;
+  font-family: Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 74px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.timer-display {
+  @include flexbox(row);
+  width: 205px;
+  height: 75px;
+  margin: 2.5px;
+  background-color: white;
+  border-radius: 5px;
+  font-family: Helvetica, sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+#start-button, #stop-button {
+  width: 14em;
+  height: 4em;
+}
+
 @media (max-width: 400px) {  
   body {
     font-size: 13px;
+  }
+
+  #minutes-input,
+  #seconds-input {
+    font-size: 60px;
   }
 }
