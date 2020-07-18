@@ -31,6 +31,7 @@ body {
 }
 
 .App {
+  display: grid;
   padding: .5em;
 }
 
@@ -50,6 +51,62 @@ body {
 
 .hovered {
   background-color: $dark-gray;
+}
+
+.input-box {
+  display: flex;
+  margin: .25em;
+}
+
+label {
+  color: white;
+  padding: .5em 1em;
+  background-color: black;
+  border-radius: 5px 0 0 5px;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  width: 1.4em;
+  height: 1.1em;
+}
+
+.input-container {
+  background-color: white;
+  border-radius: 0 5px 5px 0;
+  padding: .5em .5em;
+}
+
+//REGISTER AND LOGIN PAGES
+
+.register {
+  display: grid;
+  justify-items: center;
+  grid-gap: .5em;
+  background: $medium-gray;
+  border-radius: 5px;
+  padding: .5em;
+  margin: 2em auto;
+}
+
+.reg-title {
+  margin: 0 0 .25em;
+  font-size: 1.25rem;
+}
+
+.reg-input-box {
+  margin: 0;
+}
+
+#reg-username,
+#reg-password {
+  width: 8em;
+}
+
+.reg-text {
+  margin-bottom: 0;
 }
 
 //NAVIGATION
@@ -97,32 +154,6 @@ body {
 
 #add-set-button {
   margin: .25em;
-}
-
-.input-box {
-  display: flex;
-  margin: .25em;
-}
-
-label {
-  color: white;
-  padding: .5em 1em;
-  background-color: black;
-  border-radius: 5px 0 0 5px;
-}
-
-input {
-  font-family: inherit;
-  font-size: inherit;
-  border: none;
-  width: 1.4em;
-  height: 1.1em;
-}
-
-.input-container {
-  background-color: white;
-  border-radius: 0 5px 5px 0;
-  padding: .5em .5em;
 }
 
 #Lift {

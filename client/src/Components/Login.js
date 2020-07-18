@@ -39,21 +39,21 @@ function Register(props) {
   return (
     <div className="register">
       {message ? <p>***{message}***</p> : null}
-      <div className="inputBox">
-        <label htmlFor="regUsernameContainer">Username</label>
-        <div className="inputContainer" id="regUsernameContainer">
+      <div className="input-box reg-input-box">
+        <label htmlFor="reg-username">Username</label>
+        <div className="input-container">
           <input type="text"
-                  id="regUsername"
+                  id="reg-username"
                   value={username}
                   onChange={handleNameChange}
           />
         </div>
       </div>
-      <div className="inputBox">
-      <label htmlFor="regPasswordContainer">Password</label>
-        <div className="inputContainer" id="regPasswordContainer">
+      <div className="input-box reg-input-box">
+      <label htmlFor="reg-password">Password</label>
+        <div className="input-container">
           <input type="password"
-                  id="regPassword"
+                  id="reg-password"
                   value={password}
                   onChange={handlePasswordChange}
           />
@@ -62,7 +62,7 @@ function Register(props) {
     <Button text="LOGIN"
             onClick={handleClick}
       />
-    <p>Don't have an account?</p>
+    <p className="reg-text">Don't have an account?</p>
     <Link to="/register">
       <Button text="REGISTER NEW USER" />
     </Link>
