@@ -186,3 +186,32 @@ input {
     font-size: 3.4rem;
   }
 }
+
+@media (min-width: 1000px) {
+  .home {
+    align-items: start;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 15em 8em 1em;
+    grid-column-gap: 1em;
+    grid-template-areas:
+     "left timer"
+     "left save"
+     "left logout";
+  }
+
+  .lifts-container {
+    grid-area: left;
+  }
+
+  .timer {
+    grid-area: timer;
+  }
+
+  #save-button {
+    grid-area: save;
+  }
+
+  #logout-button {
+    grid-area: logout;
+  }
+}
