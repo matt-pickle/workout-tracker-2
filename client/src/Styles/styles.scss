@@ -31,15 +31,7 @@ body {
 }
 
 .App {
-  @include flexbox(column);
   padding: .5em;
-}
-
-.user-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .button {
@@ -66,28 +58,25 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: .5em;
-  margin-bottom: 1em;
+  margin: 0 auto 1em;
+  max-width: 600px;
 }
 
 .nav-button {
   flex: 1;
 }
 
-@media (min-width: 600px) {
-  .nav {
-    width: 580px;
-    margin: 0 auto 1em;
-  }
-}
-
 //CURRENT WORKOUT PAGE
 
 .home {
-  @include flexbox(column);
+  display: grid;
+  justify-items: center;
 }
 
 .lifts-container {
-  @include flexbox(column);
+  display: grid;
+  justify-items: center;
+  grid-gap: .5em;
   margin-bottom: 4em;
 }
 
@@ -98,10 +87,11 @@ body {
 }
 
 .lift-box {
-  @include flexbox(row);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   background-color: $medium-gray;
   border-radius: 5px;
-  margin: 0 .0 .5em;
   padding: .25em;
 }
 
@@ -110,12 +100,11 @@ body {
 }
 
 .input-box {
-  @include flexbox(row);
-  margin: 2.5px;
+  display: flex;
+  margin: .25em;
 }
 
 label {
-  @include flexbox(row);
   color: white;
   padding: .5em 1em;
   background-color: black;
@@ -126,12 +115,11 @@ input {
   font-family: inherit;
   font-size: inherit;
   border: none;
-  width: 1.5em;
+  width: 1.4em;
   height: 1.1em;
 }
 
 .input-container {
-  @include flexbox(row);
   background-color: white;
   border-radius: 0 5px 5px 0;
   padding: .5em .5em;
@@ -146,7 +134,8 @@ input {
 }
 
 .timer {
-  @include flexbox(column);
+  display: grid;
+  grid-gap: .5em;
   background-color: $medium-gray;
   border-radius: 5px;
   margin-bottom: 2em;
@@ -156,31 +145,28 @@ input {
 .timer-inputs {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  margin-bottom: .5em;
 }
 
 #minutes-input,
 #seconds-input {
-  width: 1.45em;
+  width: 1.59em;
   height: 1.25em;
   background-color: white;
-  font-family: Helvetica, sans-serif;
   font-weight: 700;
-  font-size: 4.6rem;
+  font-size: 4.25rem;
   border: 0;
   border-radius: 5px;
 }
 
 .timer-display {
-  @include flexbox(row);
-  width: 205px;
-  height: 75px;
-  margin: 2.5px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  margin: 0;
+  height: 1.25em;
   background-color: white;
   border-radius: 5px;
-  font-family: Helvetica, sans-serif;
-  font-size: 60px;
+  font-size: 4.25rem;
   font-weight: 700;
 }
 
@@ -195,7 +181,8 @@ input {
   }
 
   #minutes-input,
-  #seconds-input {
-    font-size: 3.75rem;
+  #seconds-input,
+  .timer-display {
+    font-size: 3.4rem;
   }
 }

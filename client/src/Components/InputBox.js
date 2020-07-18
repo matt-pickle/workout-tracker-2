@@ -13,7 +13,7 @@ function InputBox(props, ref) {
   }, [input])
 
   return (
-    <div className="input-box">
+    <div className="input-box" id={props.name + "-input-box"}>
       <label htmlFor={props.name}>{props.name}</label>
       <div className="input-container">
         <input type="text"
