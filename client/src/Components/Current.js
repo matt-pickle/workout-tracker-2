@@ -82,7 +82,7 @@ function Current(props) {
               id="save-button" 
               onClick={saveWorkout}
       />
-      <p>{message}</p>
+      <p className="message">{message}</p>
       <Timer />
       <LogoutButton />
     </div>

@@ -137,12 +137,6 @@ input {
   margin-bottom: 4em;
 }
 
-#save-button {
-  width: 15em;
-  height: 4em;
-  margin-bottom: 3em;
-}
-
 .lift-box {
   display: flex;
   flex-wrap: wrap;
@@ -162,6 +156,16 @@ input {
 
 #Weight {
   width: 2em;
+}
+
+#save-button {
+  width: 15em;
+  height: 4em;
+  margin-bottom: .5em;
+}
+
+.message {
+  margin-bottom: 2em;
 }
 
 .timer {
@@ -222,11 +226,12 @@ input {
   .home {
     align-items: start;
     grid-template-columns: 70% 30%;
-    grid-template-rows: 15em 8em 1em;
+    grid-template-rows: 15em 4em 4em 1em;
     grid-column-gap: 1em;
     grid-template-areas:
      "left timer"
      "left save"
+     "left message"
      "left logout";
   }
 
@@ -240,6 +245,10 @@ input {
 
   #save-button {
     grid-area: save;
+  }
+
+  .message {
+    grid-area: message;
   }
 
   #logout-button {
