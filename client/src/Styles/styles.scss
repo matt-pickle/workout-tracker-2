@@ -265,6 +265,27 @@ input {
   font-weight: 700;
 }
 
+//WEIGHT PAGE
+
+.weight-container {
+  display: grid;
+  grid-gap: 1em;
+  justify-items: center;
+}
+
+.weight-chart {
+  width: 90%;
+  max-width: 800px;
+}
+
+#weight-input-container {
+  margin-right: .5em;
+}
+
+#weight {
+  width: 2em;
+}
+
 //MEDIA QUERIES
 
 @media (max-width: 400px) {  

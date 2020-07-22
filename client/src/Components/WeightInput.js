@@ -38,13 +38,13 @@ function WeightInput(props) {
   }
 
   return (
-    <div className="inputBox">
+    <div className="input-box">
       <label htmlFor="weight">Current Weight</label>
-      <div className="inputContainer" id="currentWeightContainer">
+      <div className="input-container" id="weight-input-container">
         <input type="text"
-               id="weight"
-               value={input}
-               onChange={handleChange}
+              id="weight"
+              value={input}
+              onChange={handleChange}
         />
       </div>
       <Button text="SAVE"

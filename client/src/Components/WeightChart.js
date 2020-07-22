@@ -35,7 +35,7 @@ function WeightChart(props) {
         },
         ticks: {
           fontColor: "rgb(100, 100, 100)",
-          fontSize: 12,
+          fontSize: 16,
           fontStyle: "bold"
         }
       }],
@@ -46,7 +46,7 @@ function WeightChart(props) {
         },
         ticks: {
           fontColor: "rgb(100, 100, 100)",
-          fontSize: 12,
+          fontSize: 16,
           fontStyle: "bold",
           lineHeight: 2
         }
@@ -55,7 +55,7 @@ function WeightChart(props) {
   }
 
   return (
-    <div className="weightChart">
+    <div className="weight-chart">
       <Line data={chartData}
             options={chartOptions}
       />

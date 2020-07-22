@@ -27,7 +27,7 @@ function Weight() {
   }, []);
 
   return (
-    <div className="weightContainer">
+    <div className="weight-container">
       <WeightInput setWeightHistory={setWeightHistory} />
       <WeightChart weightHistory={weightHistory} />
       <LogoutButton />
