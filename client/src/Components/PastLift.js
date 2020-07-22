@@ -3,12 +3,10 @@ import "../Styles/styles.scss";
 
 function PastLift(props) {
   return (
-    <div className="pastLift">
-      <span><span className="boldText">Lift:</span> {props.lift}
-        <span className="boldText">&nbsp;&nbsp;&nbsp;Weight:</span> {props.weight}lbs</span>
-      <div className="pastReps">
-        {props.reps}
-      </div>
+    <div className="past-lift">
+      <p className="past-lift-text"><span className="bold-text">LIFT:&nbsp;</span>{props.lift}
+        <span className="bold-text">&nbsp;&nbsp;&nbsp;WEIGHT:&nbsp;</span>{props.weight}lbs</p>
+      <p className="past-reps-text">{props.reps}</p>
     </div>
   )
 }

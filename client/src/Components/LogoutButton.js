@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Button from "./Button";
 import {Redirect} from "react-router-dom";
 
-function LogoutButton() {
+function LogoutButton(props) {
   const [redirect, setRedirect] = useState(false);
 
   function logout() {
@@ -18,9 +18,9 @@ function LogoutButton() {
   }
 
   return (
-    <div id="logout-button">
+    <div id={props.id}>
       <Button text="LOGOUT"
-            onClick={logout}
+              onClick={logout}
       />
       {redirect ? <Redirect to="/login" /> : null}
     </div>

@@ -9,7 +9,7 @@ function PastWorkout(props) {
     const numOfSets = Object.keys(lift).length - 2;
     let i;
     for (i = 1; i < numOfSets; i++) {
-      repsArr.push(<span><span className="boldText">Set {i}:</span> {lift[`Set ${i}`]} reps&nbsp;&nbsp;&nbsp;</span>);
+      repsArr.push(<span><span className="bold-text">SET {i}:</span> {lift[`Set ${i}`]} reps&nbsp;&nbsp;&nbsp;</span>);
     }
     return (
       <PastLift lift={lift["Lift"]}
@@ -21,12 +21,11 @@ function PastWorkout(props) {
   });
   
   return (
-    <div className="pastWorkout">
-      <p className="dateText">{props.date}</p>
-      <div className="pastLiftsContainer">
-        {pastLifts}
-      </div>
+    <div className="past-workout">
+      <p className="date-text">{props.date}</p>
+      {pastLifts}
       <Button text="REMOVE"
+              id="remove-button"
               onClick={() => props.removeWorkout(props.id)}
       />
     </div>

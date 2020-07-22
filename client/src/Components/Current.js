@@ -84,7 +84,7 @@ function Current(props) {
       />
       <p className="message">{message}</p>
       <Timer />
-      <LogoutButton />
+      <LogoutButton id="logout-button-current"/>
     </div>
   )
 }

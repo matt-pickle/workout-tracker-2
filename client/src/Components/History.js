@@ -61,7 +61,7 @@ function History(props) {
   return (
     <div className="history">
       {pastWorkouts}
-      <LogoutButton />
+      <LogoutButton id="logout-button-history"/>
     </div>
   )
 }
