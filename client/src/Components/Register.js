@@ -44,9 +44,9 @@ function Register(props) {
         <label htmlFor="reg-username">Username</label>
         <div className="input-container">
           <input type="text"
-                  id="reg-username"
-                  value={username}
-                  onChange={handleNameChange}
+                 id="reg-username"
+                 value={username}
+                 onChange={handleNameChange}
           />
         </div>
       </div>
@@ -54,9 +54,9 @@ function Register(props) {
       <label htmlFor="reg-password">Password</label>
         <div className="input-container">
           <input type="password"
-                  id="reg-password"
-                  value={password}
-                  onChange={handlePasswordChange}
+                 id="reg-password"
+                 value={password}
+                 onChange={handlePasswordChange}
           />
         </div>
     </div>

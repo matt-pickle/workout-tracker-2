@@ -56,7 +56,7 @@ function History(props) {
         />
       )
     })
-  : <h2>No workout history yet!</h2>;
+  : null;
 
   return (
     <div className="history">
