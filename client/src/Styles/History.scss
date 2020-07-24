@@ -1,9 +1,0 @@
-@import "_variables";
-
-.history {
-  @include flexbox(column);
-  flex-wrap: wrap;
-  font-family: Helvetica, sans-serif;
-  font-weight: 400;
-  margin: 0;
-}
