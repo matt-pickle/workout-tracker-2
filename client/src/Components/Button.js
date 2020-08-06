@@ -19,13 +19,21 @@ function Button(props) {
     setHoverClass("");
   }
 
+  function touch() {
+    setHoverClass("hovered");
+  }
+
+  function unTouch() {
+    setHoverClass("");
+  }
+
   return (
     <button className={`button ${hoverClass}`}
             id={props.id}
             onMouseEnter={hover}
             onMouseLeave={unHover}
-            onTouchStart={hover}
-            onTouchEnd={unHover}
+            onTouchStart={touch}
+            onTouchEnd={unTouch}
             onClick={props.onClick}
     >
       {props.text}
