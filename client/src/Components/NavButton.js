@@ -20,13 +20,21 @@ function NavButton(props) {
     setHoverClass("");
   }
 
+  function touch() {
+    setHoverClass("hovered");
+  }
+
+  function unTouch() {
+    setHoverClass("");
+  }
+
   return (
     <Link to={props.link}
           className={`button nav-button ${hoverClass}`}
           onMouseEnter={hover}
           onMouseLeave={unHover}
-          onTouchStart={hover}
-          onTouchEnd={unHover}
+          onTouchStart={touch}
+          onTouchEnd={unTouch}
     >
       {props.text}
     </Link>
