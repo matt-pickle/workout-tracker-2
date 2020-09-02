@@ -96,7 +96,13 @@ input {
 }
 
 .reg-text {
-  margin-bottom: 0;
+  text-align: center;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.lowercase {
+  text-transform: lowercase;
 }
 
 //NAVIGATION

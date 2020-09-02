@@ -66,6 +66,8 @@ function Register(props) {
     <Link to="/register">
       <Button text="REGISTER NEW USER" />
     </Link>
+    <p className="reg-text"> or enter <span className="lowercase">"guest"</span>
+    <br/>as username and pwd</p>
   </div>
   )
 }
