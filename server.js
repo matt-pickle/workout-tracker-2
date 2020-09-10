@@ -18,7 +18,7 @@ mongoose.connect(
 DATABASE_URL,
   		{useNewUrlParser: true, useUnifiedTopology: true} 
 ).catch(error => console.error("MongoDB connection error: " + error.message));
-mongoose.connection.on("connected", () => console.log(`connected to MongoDB at ${DATABASE_URL}`));
+mongoose.connection.on("connected", () => console.log(`connected to MongoDB`));
 
 app.listen(PORT, () => {
 console.log(`server is running at port ${PORT}`);

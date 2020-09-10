@@ -1,11 +1,11 @@
 import React, {useState, useContext} from "react";
 import "../Styles/styles.scss";
-import {UserContext} from "./UserContext";
+import {Context} from "./Context";
 import Button from "./Button";
 
-function WeightInput(props) {
+function WeightInput() {
   const [input, setInput] = useState("");
-  const user = useContext(UserContext);
+  const {user, updateContext} = useContext(Context);
 
   function handleChange(event) {
     setInput(event.target.value);
@@ -29,10 +29,8 @@ function WeightInput(props) {
           console.error(text);
         });
       } else {
-        res.text().then(text => {
-          props.setWeightHistory(JSON.parse(text));
-          setInput("");
-        });
+        setInput("");
+        updateContext();
       }
     });
   }

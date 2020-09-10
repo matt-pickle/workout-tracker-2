@@ -1,17 +1,17 @@
 import React, {useState, useEffect, useRef, useContext} from "react";
-import {UserContext} from "./UserContext";
+import {Context} from "./Context";
 import Lift from "./Lift";
 import Button from "./Button";
 import Timer from "./Timer";
 import LogoutButton from "./LogoutButton";
 import "../Styles/styles.scss";
 
-function Current(props) {
+function Current() {
   const [lifts, setLifts] = useState([1]);
   const [workoutArr, setWorkoutArr] = useState([]);
   const [message, setMessage] = useState("");
   const liftNameInputRef = useRef(null);
-  const user = useContext(UserContext);
+  const {user, updateContext} = useContext(Context);
 
   function addLift() {
     const newLiftNum = lifts.length + 1;
@@ -53,6 +53,7 @@ function Current(props) {
         });
       } else {
           setMessage("Workout saved to your history!");
+          updateContext();
       }
     });
   }

@@ -1,16 +1,22 @@
-import React, {useState, useEffect} from "react";
+import React, {useContext} from "react";
 import {Line} from "react-chartjs-2";
+import {Context} from "./Context";
 import "../Styles/styles.scss";
 
-function WeightChart(props) {
-  const datesArr = props.weightHistory.map(obj => {
+function WeightChart() {
+  const {weightHistory} = useContext(Context);
+
+  const datesArr = weightHistory ? weightHistory.map(obj => {
     const keyArr = Object.keys(obj);
     return keyArr[0];
-  });
-  const weightsArr = props.weightHistory.map(obj => {
+  })
+  : null;
+
+  const weightsArr = weightHistory ? weightHistory.map(obj => {
     const valueArr = Object.values(obj);
     return valueArr[0];
-  });
+  })
+  : null;
 
   //Data and styling for the chart
   const chartData = {

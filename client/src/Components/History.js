@@ -1,36 +1,18 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useContext} from "react";
 import "../Styles/styles.scss";
-import {UserContext} from "./UserContext";
+import {Context} from "./Context";
 import PastWorkout from "./PastWorkout";
 import LogoutButton from "./LogoutButton";
 
-function History(props) {
-  const user = useContext(UserContext);
-  const [workoutHistory, setWorkoutHistory] = useState();
-
-  //Gets workout history from database
-  useEffect(() => {
-    fetch(`/workout/getHistory?user=${user}`)
-    .then(res => {
-      if (!res.ok) {
-        res.text().then(text => {
-          console.error(text);
-        });
-      } else {
-        res.text().then(text => {
-          setWorkoutHistory(JSON.parse(text));
-        });
-      }
-    });
-  }, []);
-
+function History() {
+  const {user, workoutHistory, updateContext} = useContext(Context);
+ 
   //Removes PastWorkout when "Remove" button is clicked
   function removeWorkout(id) {
     let workoutHistoryCopy = workoutHistory;
     const newWorkoutHistory = workoutHistoryCopy.filter(workout => {
       return (workoutHistoryCopy.indexOf(workout) + 1) !== id
     })
-    setWorkoutHistory(newWorkoutHistory)
     fetch(`/workout/updateHistory?user=${user}&workoutHistory=${JSON.stringify(newWorkoutHistory)}`, {
       method: "PUT"
     })
@@ -39,6 +21,8 @@ function History(props) {
         res.text().then(text => {
           console.error(text);
         });
+      } else {
+        updateContext();
       }
     });
   }
