@@ -2,6 +2,7 @@ const User = require("../models/User");
 
 //Gets a user's weightHistory
 function getHistory(req, res) {
+  console.log("Username submitted for weight history pull: " + req.query.user);
   User.findOne(
     {username: req.query.user},
     (err, userObj) => {
