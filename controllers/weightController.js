@@ -2,16 +2,12 @@ const User = require("../models/User");
 
 //Gets a user's weightHistory
 function getHistory(req, res) {
-  console.log("Username submitted for weight history pull: " + req.query.user);
   User.findOne(
     {username: req.query.user},
     (err, userObj) => {
       if (err) {
         console.error(err);
         return res.status(500).send(err);
-      } else if (userObj === null) {
-        console.error("Error: attempted to pull weightHistory with no username");
-        return res.status(500).send("Error: attempted to pull weightHistory with no username");
       }
       return res.status(200).send(userObj.weightHistory);
     }
