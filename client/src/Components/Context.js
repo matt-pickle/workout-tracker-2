@@ -3,8 +3,8 @@ const Context = React.createContext();
 
 function ContextProvider(props) {
   const [user, setUser] = useState("");
-  const [workoutHistory, setWorkoutHistory] = useState();
-  const [weightHistory, setWeightHistory] = useState();
+  const [workoutHistory, setWorkoutHistory] = useState([]);
+  const [weightHistory, setWeightHistory] = useState([]);
   const [forceUpdate, setForceUpdate] = useState(true);
 
   //Gets username from web token

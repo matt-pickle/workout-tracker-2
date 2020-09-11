@@ -5,7 +5,7 @@ function getHistory(req, res) {
   User.findOne(
     {username: req.query.user},
     (err, userObj) => {
-      if (err) {
+      if (err || userObj === null) {
         console.error(err);
         return res.status(500).send(err);
       }
