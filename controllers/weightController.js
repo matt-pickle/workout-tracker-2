@@ -10,8 +10,8 @@ function getHistory(req, res) {
         console.error(err);
         return res.status(500).send(err);
       } else if (userObj === null) {
-        console.error("Error: Username was not submitted to database");
-        return res.status(500).send("Error: Username was not submitted to database");
+        console.error("Error: attempted to pull weightHistory with no username");
+        return res.status(500).send("Error: attempted to pull weightHistory with no username");
       }
       return res.status(200).send(userObj.weightHistory);
     }

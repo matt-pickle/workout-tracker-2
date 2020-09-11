@@ -80,7 +80,6 @@ function getUser(req, res) {
         res.status(401).send("Unauthorized: Invalid token");
       } else {
         res.status(200).send(decoded.username);
-        console.log("Pulled Username: " + decoded.username);
       }
     });
   }
